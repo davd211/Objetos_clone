@@ -47,13 +47,15 @@ public class libroMain {
         l2.devolución();
         System.out.println(l2.toString());
         
-        if(l1.equals(l2)){
+        Libro l3 = (Libro)l1.clone();
         
-            System.out.println("l y l2 son iguales");
+        if(l1.equals(l3)){
+        
+            System.out.println("l y l3 son iguales");
             
         } else {
         
-            System.out.println("l y l2 no son iguales");
+            System.out.println("l y l3 no son iguales");
             
         }
 

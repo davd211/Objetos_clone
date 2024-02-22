@@ -26,7 +26,7 @@ package Contar;
  * Para posteriormente invocar a suma y mostrar el valor de ambos objetos por
  * pantalla.
  */
-public class Contar {
+public class Contar implements Cloneable {
 
     private int contador;
 
@@ -96,8 +96,18 @@ public class Contar {
         return hash;
     }
 
-   
-    
-   
+    @Override
+    public Object clone()  {
+        
+        Object objeto = null;
+        try{
+            objeto=super.clone();
+        
+        }catch (CloneNotSupportedException ex){
+            System.out.println("Error al duplicar");
+        
+        }
+        return objeto;
+    }
     
 }

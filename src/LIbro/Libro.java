@@ -15,7 +15,7 @@ import java.util.Objects;
  * con lo que no tendremos que pasar su valor como parámetro) y los métodos
  * getters y setters
  */
-public class Libro {
+public class Libro  implements Cloneable{
 
     private String titulo, isbn, autor;
     private boolean prestado;
@@ -125,13 +125,18 @@ public class Libro {
         return Objects.equals(this.estado, other.estado);
     }
 
-   
+    @Override
+    public Object clone()  {
+        
+        Object objeto = null;
+        try {
+            objeto=super.clone();
+        } catch (CloneNotSupportedException ex) {
+            System.out.println("Error al duplicar");
+        }
+        return objeto;
+        
+    }
     
-    
-
-    
-    
-    
-    
-    
+  
 }
