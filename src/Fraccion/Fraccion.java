@@ -8,7 +8,7 @@ package Fraccion;
  *
  * @author David.P
  */
-public class Fraccion {
+public class Fraccion  implements Cloneable {
 
     private int denominador, numerador;
 
@@ -59,7 +59,6 @@ public class Fraccion {
         return f1;
 
     }
- 
 
     ;
     
@@ -95,12 +94,16 @@ public class Fraccion {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj); 
-        
-    }
+    public Object clone() {
 
-  
-   
+        Object objeto = null;
+        try {
+            objeto = super.clone();
+        } catch (CloneNotSupportedException ex) {
+            System.out.println("Error al duplicar");
+        }
+        return objeto;
+
+    }
 
 }

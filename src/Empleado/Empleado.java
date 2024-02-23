@@ -17,7 +17,7 @@ import java.util.Objects;
  * defecto, y mostraremos el número de empleados. A continuación creamos otros
  * dos empleados y volvemos a mostrar cuantos empleados hay
  */
-public class Empleado {
+public class Empleado implements Cloneable{
 
     private String dni;
     private String nombre;
@@ -87,6 +87,19 @@ public class Empleado {
         hash = 29 * hash + (int) (Double.doubleToLongBits(this.sueldo) ^ (Double.doubleToLongBits(this.sueldo) >>> 32));
         return hash;
     }
-    
+     @Override
+    public Object clone() {
+
+        Object objeto = null;
+        try {
+            objeto = super.clone();
+        } catch (CloneNotSupportedException ex) {
+            System.out.println("Error al duplicar");
+        }
+        return objeto;
+
+    }
 
 }
+
+    

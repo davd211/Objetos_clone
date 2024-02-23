@@ -33,7 +33,7 @@ public class ClaseFraccion {
         Fraccion resultadoM = f1.multiplicacion(f2);
         System.out.println("Multiplicacion: " + resultadoM.getNumerador() + "/" + resultadoM.getDenominador());
       
-
+        Fraccion f3 = (Fraccion)f1.clone();
         
         if (f1.equals(f2)) {
             System.out.println("f y f2 son iguales");

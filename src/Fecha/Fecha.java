@@ -8,7 +8,7 @@ package Fecha;
  *
  * @author David.P
  */
-public class Fecha {
+public class Fecha implements Cloneable{
 
    
 
@@ -194,6 +194,19 @@ public class Fecha {
         hash = 13 * hash + this.anno;
         return hash;
     }
+   @Override
+    public Object clone() {
+
+        Object objeto = null;
+        try {
+            objeto = super.clone();
+        } catch (CloneNotSupportedException ex) {
+            System.out.println("Error al duplicar");
+        }
+        return objeto;
+
+    }
+
+}
 
     
-}

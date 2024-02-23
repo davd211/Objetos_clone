@@ -21,7 +21,9 @@ public class MainEmpleado {
         Empleado e3 = new Empleado();
         System.out.println("Numero empleados: " + Empleado.getNumEmpleados());
 
-        if (e1.equals(e3)) {
+        
+        Empleado e4 =(Empleado)e1.clone();
+        if (e1.equals(e4)) {
 
             System.out.println("Empleados iguales");
         } else {
